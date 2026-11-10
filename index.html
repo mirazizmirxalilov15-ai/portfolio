@@ -3,75 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miraziz Mirxalilov</title>
-    <!-- Ikonkalar uchun Font Awesome kutubxonasi -->
+    <title>Miraziz Mirxalilov | Portfolio</title>
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; text-align: center; }
-        nav { background: #1e293b; padding: 15px 30px; color: white; font-size: 22px; font-weight: bold; text-align: left; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .container { max-width: 700px; margin: 30px auto; padding: 0 20px; }
-        .hero { padding: 40px 30px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .hero:hover { transform: translateY(-5px); }
-        h1 { color: #1e293b; margin: 0 0 5px 0; font-size: 32px; }
-        .subtitle { color: #3b82f6; font-weight: bold; margin-bottom: 25px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+      
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; }
         
-        .skills-title { text-align: left; font-size: 18px; color: #1e293b; margin-bottom: 10px; font-weight: bold; }
-        ul { list-style: none; padding: 0; text-align: left; margin: 0 0 30px 0; }
-        li { padding: 12px 15px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 10px; font-size: 16px; }
-        li i { color: #10b981; }
+       
+        nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); padding: 20px; text-align: center; font-size: 24px; font-weight: bold; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        nav i { color: #38bdf8; margin-right: 10px; }
 
-        .social-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 25px; }
-        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 15px; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; flex: 1; }
+
+      
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       
+        .hero { 
+            background: rgba(30, 41, 59, 0.4); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 40px; 
+            border-radius: 24px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        h1 { font-size: 36px; color: #fff; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .subtitle { color: #38bdf8; font-weight: 600; margin-bottom: 30px; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; }
         
-        .phone { background: #1e293b; }
+       
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 35px; }
+        .skill-item { 
+            background: rgba(15, 23, 42, 0.5); 
+            padding: 15px; 
+            border-radius: 12px; 
+            text-align: left; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover { 
+            transform: scale(1.03); 
+            background: rgba(56, 189, 248, 0.1); 
+            border-color: #38bdf8; 
+        }
+        .skill-item i { color: #38bdf8; font-size: 20px; }
+
+        .social-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 15px; transition: all 0.3s ease; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        .phone { background: #334155; border: 1px solid rgba(255,255,255,0.1); }
+        .phone:hover { background: #475569; }
         .telegram { background: #0088cc; }
+        .telegram:hover { box-shadow: 0 0 20px rgba(0, 136, 204, 0.5); }
         .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .instagram:hover { box-shadow: 0 0 20px rgba(220, 39, 67, 0.5); }
 
-        .projects-section { background: white; border-radius: 15px; padding: 30px; margin-top: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: left; }
-        .projects-section h3 { margin-top: 0; color: #1e293b; }
-        .project-card { background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; font-size: 15px; color: #475569; }
-
-        footer { background: #1e293b; color: #94a3b8; padding: 20px; margin-top: 60px; font-size: 14px; }
+      
+        footer { background: #0f172a; color: #64748b; padding: 25px; text-align: center; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
 <body>
 
-    <nav><i class="fa-solid fa-code"></i> Portfolio</nav>
+    <nav><i class="fa-solid fa-terminal"></i> Miraziz.dev</nav>
 
     <div class="container">
         <div class="hero">
             <h1>Miraziz Mirxalilov</h1>
-            <p class="subtitle">IT Mutaxassisi & Bo'lajak Web Dasturchi</p>
+            <p class="subtitle">IT Specialist & Web Developer Student</p>
             
-            <div class="skills-title">Ko'nikmalarim:</div>
-            <ul>
-                <li><i class="fa-solid fa-circle-check"></i> Kompyuter bilimlari (chuqur darajada)</li>
-                <li><i class="fa-solid fa-circle-check"></i> MS Office dasturlari (Word, Excel, PowerPoint)</li>
-                <li><i class="fa-solid fa-circle-check"></i> Windows operatsion tizimlarini o'rnatish va sozlash</li>
-                <li><i class="fa-solid fa-circle-check"></i> Hozirda: Web dasturlash kursi talabasi (HTML, CSS)</li>
-            </ul>
+           
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa-solid fa-desktop"></i> Глубокие знания ПК</div>
+                <div class="skill-item"><i class="fa-solid fa-file-excel"></i> MS Office (Word, Excel)</div>
+                <div class="skill-item"><i class="fa-solid fa-window-restore"></i> Установка Windows</div>
+                <div class="skill-item"><i class="fa-solid fa-code"></i> Изучаю HTML5 & CSS3</div>
+            </div>
 
-            <!-- Aloqa va Ijtimoiy tarmoqlar tugmalari -->
             <div class="social-buttons">
                 <a href="tel:+998933296629" class="btn phone"><i class="fa-solid fa-phone"></i> 93-329-66-29</a>
                 <a href="https://t.me" target="_blank" class="btn telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
                 <a href="https://instagram.com" target="_blank" class="btn instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
         </div>
-
-        <!-- Yangi qo'shilgan chiroyli blok: Loyihalar -->
-        <div class="projects-section">
-            <h3><i class="fa-solid fa-laptop-code"></i> Mening Loyihalarim</h3>
-            <div class="project-card">
-                <strong>Shaxsiy Portfolio Veb-sayti</strong><br>
-                Ushbu veb-sayt mening birinchi mukammal loyihalarimdan biri bo'lib, HTML va CSS texnologiyalari yordamida yaratilgan.
-            </div>
-        </div>
     </div>
 
     <footer>
-        &copy; 2026 Miraziz Mirxalilov. Barcha huquqlar himoyalangan.
+        &copy; 2026 Miraziz Mirxalilov. Создано с помощью HTML & CSS.
     </footer>
 
 </body>
